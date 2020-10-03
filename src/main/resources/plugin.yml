@@ -1,0 +1,7 @@
+name: TCMythicMobs
+version: ${project.version}
+main: com.github.sarhatabaot.tcmythicmobs.TCMythicMobs
+api-version: 1.16
+depend:
+  - TradingCards
+  - MythicMobs
