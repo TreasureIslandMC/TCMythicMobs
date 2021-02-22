@@ -1,8 +1,8 @@
 package com.github.sarhatabaot.tcmythicmobs;
 
 import media.xen.tradingcards.TradingCards;
-import media.xen.tradingcards.addons.AddonLogger;
-import media.xen.tradingcards.addons.TradingCardsAddon;
+import media.xen.tradingcards.api.addons.AddonLogger;
+import media.xen.tradingcards.api.addons.TradingCardsAddon;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class TCMythicMobs extends JavaPlugin implements TradingCardsAddon {

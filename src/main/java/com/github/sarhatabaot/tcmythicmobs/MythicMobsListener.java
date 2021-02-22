@@ -4,8 +4,8 @@ import io.lumine.xikage.mythicmobs.api.bukkit.events.MythicMobDeathEvent;
 import io.lumine.xikage.mythicmobs.mobs.ActiveMob;
 import media.xen.tradingcards.CardUtil;
 import media.xen.tradingcards.TradingCards;
-import media.xen.tradingcards.addons.AddonListener;
-import media.xen.tradingcards.addons.TradingCardsAddon;
+import media.xen.tradingcards.api.addons.AddonListener;
+import media.xen.tradingcards.api.addons.TradingCardsAddon;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -59,7 +59,7 @@ public class MythicMobsListener extends AddonListener {
 				if (!cancelled) {
 					tradingCards.debug("Successfully generated card.");
 					boolean isShiny = false;
-					int shinyRandom = tradingCards.r.nextInt(100) + 1;
+					int shinyRandom = tradingCards.getRandom().nextInt(100) + 1;
 					tradingCards.debug("Shiny chance for level " + e.getMobLevel() + " is " + tradingCardsAddon.getJavaPlugin().getConfig().getInt("Levels." + (int)e.getMobLevel() + ".Shiny-Version-Chance"));
 					if (shinyRandom <= tradingCardsAddon.getJavaPlugin().getConfig().getInt("Levels." + e.getMobLevel() + ".Shiny-Version-Chance")) {
 						isShiny = true;
@@ -97,7 +97,7 @@ public class MythicMobsListener extends AddonListener {
 			}
 		}
 
-		int shouldItDrop = tradingCards.r.nextInt(100) + 1;
+		int shouldItDrop = tradingCards.getRandom().nextInt(100) + 1;
 		type = "";
 		tradingCards.debug("shouldItDrop Num: " + shouldItDrop);
 		if (!alwaysDrop) {
@@ -115,7 +115,7 @@ public class MythicMobsListener extends AddonListener {
 		Map<Integer, String> rarityIndexes = new HashMap<>();
 		int i = 0;
 		int mini = 0;
-		int random = tradingCards.r.nextInt(100000) + 1;
+		int random = tradingCards.getRandom().nextInt(100000) + 1;
 		tradingCards.debug("Random Card Num: " + random);
 		tradingCards.debug("Type: " + type);
 
